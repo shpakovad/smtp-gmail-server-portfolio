@@ -21,8 +21,8 @@ var allowCrossDomain = function(req, res, next) {
 
 // you might have "app" instead of "server"
 app.configure(function() {
-    server.use(allowCrossDomain);   // make sure this is is called before the router
-    server.use(server.router);      // not entirely necessary--will be automatically called with the first .get()
+    app.use(allowCrossDomain);   // make sure this is is called before the router
+    app.use(app.router);      // not entirely necessary--will be automatically called with the first .get()
 });
 
 app.use(cors())
