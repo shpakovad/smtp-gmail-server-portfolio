@@ -5,7 +5,12 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(cors())
+app.use(cors({
+    credentials: 'true',
+    origin: '*',
+    methods: 'GET, POST, PUT, DELETE, OPTIONS',
+    allowedHeaders: 'Authorization, Access-Control-Allow-Headers, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
+}))
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
