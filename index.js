@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -37,14 +37,12 @@ app.post("/sendMessage", async function (req, res) {
             html: `<b>Message from Portfolio Page</b>,
 <div>name: ${name}</div>
 <div>email: ${email}</div>
-<div>message: ${message}</div>
-`
+<div>message: ${message}</div>`
         });
         res.send('Message sent');
-    } catch(e){
-        console.log('error' , {...e} )
+    } catch (e) {
+        console.log('error', {...e})
     }
-
 });
 
 let port = process.env.PORT || 3010
