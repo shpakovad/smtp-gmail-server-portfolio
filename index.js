@@ -6,8 +6,8 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(cors({
-        origin: true,
-        credentials: true
+        origin: '*',
+        optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
     }
 ))
 app.use(bodyParser.urlencoded({extended: false}))
