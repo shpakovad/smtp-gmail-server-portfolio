@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(cors())
+// app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
@@ -24,7 +24,7 @@ app.get("/", function (req, res) {
     res.send("All is work!")
 })
 
-app.post("/sendMessage", async function (req, res) {
+app.post("/sendMessage", cors(), async function (req, res) {
 
     let {name, email, message} = req.body
     try {
